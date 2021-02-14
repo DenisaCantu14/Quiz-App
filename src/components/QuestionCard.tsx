@@ -2,7 +2,7 @@ import React from 'react';
 //Types
 import {AnswerObject} from '../App'
 //Styles
-import {Wrapper, ButtonWrapper} from './QuestionCard.style'
+import './QuestionCard.css';
 
 type Props = {
     question:string;
@@ -13,24 +13,28 @@ type Props = {
     totalQuestions:number;
 };
 
+
 const  QuestionCard:React.FC<Props> = ({question,answers,callback, userAnswer, questionNr, totalQuestions}) => (
-    <Wrapper>
+    <div className="container">
         <p className ="number">
             Question: {questionNr} / {totalQuestions}
         </p>
-        <p dangerouslySetInnerHTML ={{__html: question}}></p> 
-        <div>
+        <p className = "question"dangerouslySetInnerHTML ={{__html: question}}></p> 
+        <div className="answers">
             {answers.map(answer => (  
-                <ButtonWrapper  
+                <div  
                 key = {answer} 
-                correct= {userAnswer?.correctAnswer === answer} 
-                userClicked = {userAnswer?.answer === answer}
-                >
-                    <button disabled = {!!userAnswer} value = {answer} onClick={callback}>
+                //correct= {userAnswer?.correctAnswer === answer} 
+                //userClicked = {userAnswer?.answer === answer}
+                 >
+                    <button disabled = {!!userAnswer} value = {answer} onClick={callback} className="answer"style = {{backgroundColor: 
+                    (userAnswer?.correctAnswer === answer ) ? '#9fbcaa' : 
+                    (!(userAnswer?.correctAnswer === answer) && userAnswer?.answer === answer) ? '#ec9b94': 'transparent'}}
+               >
                         <span dangerouslySetInnerHTML = {{__html: answer}}/>
                     </button>
-                </ButtonWrapper>    ))}
+                </div>    ))}
         </div>
-    </Wrapper>);
+    </div>);
 
 export default QuestionCard

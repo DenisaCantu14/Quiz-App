@@ -1,0 +1,40 @@
+.container {
+    max-width : 1100px;
+    background: transparent;
+    border-radius: 10px;
+    border: 1px solid  #7b6787;
+    padding: 20px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.25);
+    text-align: center; 
+    transition: all 0.3s ease;
+
+    
+}
+
+.question, .number{
+    font-size: 1rem;
+    color: #7e725f;
+    font-weight:bold;
+
+
+}
+
+
+.answer:hover{
+    opacity:0.8;
+}
+
+.answer{
+    user-select:none;
+    cursor:pointer;
+    font-size: 1.5rem;
+    width: 100%;
+    height: 50px;
+    margin: 5px 0;
+    padding:5px;
+    border: 3px solid #f7e9ff;
+    box-shadow: 1px 2px 0px rgba(0,0,0,0.1);       
+    border-radius: 10px;
+    color: #7b6787;
+    text-shadow: 0px 1px 0px rgba(0,0,0,0.25);   
+}
