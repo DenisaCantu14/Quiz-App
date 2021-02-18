@@ -1,9 +1,9 @@
 import React from 'react';
 import './LogIn.css';
 
-function Authentication(){
-    return (<div>
-         <div className="auth">
+function LogIn(){
+    return (
+        
              <div className="login">
                   <form>
                         <p> Welcome to</p>
@@ -15,22 +15,10 @@ function Authentication(){
                         <p>You dont have an account pleasa <span><button type="button" >Sign Up</button></span></p>
                   </form>
             </div>
-            <div className = "signup">
-                <form>
-                    <input type="text" placeholder="Username"></input>
-                    <br></br>
-                    <input type="password" placeholder="Password"></input><br/>
-                    <input type="password" placeholder="Confirm Password"></input>
-                    <br />      
-                    <button type="submit">Sign Up</button>
-                </form>
-
-            </div>
-        
-         </div>
-    </div>)
+            
+    )
 
 }
 
 
-export default Authentication
+export default LogIn
