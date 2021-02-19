@@ -6,7 +6,8 @@ import Home from './components/Home'
 import SignUp from './components/SignUp'
 
 
-function App() {
+class App extends React.Component {
+  render(){
   return (
     <BrowserRouter>
       <div className="App">
@@ -24,6 +25,7 @@ function App() {
       </div>
     </BrowserRouter>
   )
+}
 }
 
 export default App

@@ -1,8 +1,11 @@
 import React from 'react';
+import { render } from 'react-dom';
 import {Link} from "react-router-dom";
 
-function Nav ()
+class Nav extends React.Component
 {
+    render()
+    {
     return (
         <nav>
             <Link to ={ '/'}>Home</Link>
@@ -10,6 +13,7 @@ function Nav ()
             <Link to ={'/signup'}>SignUp</Link>
         </nav>
     )
-}
+    }
+}       
 
 export default Nav;
