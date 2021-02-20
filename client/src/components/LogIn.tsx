@@ -1,21 +1,36 @@
-import React from "react";
-import "./LogIn.css";
+import React, {useState} from "react";
+import Axios from "axios"
 
-class LogIn extends React.Component {
-  render() {
+function LogIn()
+{
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
+    const [data, setData] = useState(null);
+    const logIn = () => {
+      Axios({
+        method: "POST",
+        data: {
+          username,
+          password,
+        },
+        withCredentials: true,
+        url: "http://localhost:4000/login",
+      }).then((res) => { 
+        setData(res.data);
+        console.log(res.data);
+      })
+    };
     return (
       <div className="login">
-        <form>
           <p> Welcome to</p>
           <h1>Quiz App</h1>
-          <input type="text" placeholder="Username"></input>
+          <input type="text" placeholder="Username"  onChange = {e => setUsername(e.target.value)}></input>
           <br></br>
-          <input type="password" placeholder="Password"></input>
-          <button type="submit">LogIn</button>
-        </form>
+          <input type="password" placeholder="Password"  onChange = {e => setPassword(e.target.value)}></input>
+          <button type="submit" onClick={logIn}>LogIn</button>
       </div>
     );
   }
-}
+
 
 export default LogIn;

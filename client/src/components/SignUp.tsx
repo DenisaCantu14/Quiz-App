@@ -11,13 +11,16 @@ function SignUp()
       axios({
         method: "POST",
         data: {
-          username: username,
-          email: email,
-          password: password,
+          username,
+          email,
+          password,
         },
         withCredentials: true,
         url: "http://localhost:4000/register",
-      }).then((res) => console.log(res));
+      }).then((res) => { 
+        setData(res.data);
+        console.log(res.data);
+      });
     }
   
     return (
