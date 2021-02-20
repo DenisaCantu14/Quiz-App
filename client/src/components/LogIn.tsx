@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import Axios from "axios"
-
+export let isLoggedIn = false;
 function LogIn()
 {
+    
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [data, setData] = useState(null);
@@ -17,6 +18,7 @@ function LogIn()
         url: "http://localhost:4000/login",
       }).then((res) => { 
         setData(res.data);
+        isLoggedIn = true;
         console.log(res.data);
       })
     };

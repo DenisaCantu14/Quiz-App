@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
+.logo
+{
+    font-family: 'Akaya Kanadaka', cursive;
+    text-decoration: none!important;
+    font-size:3rem;
+    margin:2px;
+    color:#937fbc;
+    
+}
+nav
+{
+    background-color: #fac3af!important;
+}
+.logo:hover
+{
+    color:#837bc4;
+}
+.nav-item{
+    margin-left: 20px;
+    font-size:1.5rem;
+    color:#ffa6ac!important;
+
+}
+h1{
+    font-family: 'Akaya Kanadaka', cursive;
+  
+
+}
