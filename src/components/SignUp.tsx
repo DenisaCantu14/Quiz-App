@@ -1,6 +1,7 @@
 import React from "react";
 import postData from './methods'
 
+
 interface UserInfo  {
   username: string;
   email: string;
@@ -27,7 +28,7 @@ class SignUp extends React.Component <{}, UserInfo> {
 
     e.preventDefault();
     const newUser = this.state;
-    await postData('http://localhost:3000/add-user', newUser)
+    //await postData('http://localhost:3000/add-user', newUser)
     
     
   }
