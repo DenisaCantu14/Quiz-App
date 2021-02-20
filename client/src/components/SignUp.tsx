@@ -19,6 +19,7 @@ function SignUp()
         url: "http://localhost:4000/register",
       }).then((res) => console.log(res));
     }
+  
     return (
       <div className="signup">
        
