@@ -3,23 +3,24 @@
 {
     font-family: 'Akaya Kanadaka', cursive;
     text-decoration: none!important;
-    font-size:3rem;
+    font-size:2.2rem;
     margin:2px;
-    color:#937fbc;
+    color:#dad7f5;
     
 }
 nav
 {
-    background-color: #fac3af!important;
+    background-image:url(C:\Users\Denisa\Desktop\quiz\Quiz-App\client\src\images\bg.jpg);
+    background-size : cover;
 }
 .logo:hover
 {
-    color:#837bc4;
+    color:#bebbd6;
 }
 .nav-item{
     margin-left: 20px;
     font-size:1.5rem;
-    color:#ffa6ac!important;
+    color:#dad7f5!important;
 
 }
 h1{

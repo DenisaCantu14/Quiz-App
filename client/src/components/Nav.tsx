@@ -3,10 +3,10 @@ import { render } from 'react-dom';
 import { Link } from "react-router-dom";
 import './CSS/Nav.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { isLoggedIn, } from './LogIn';
 
-console.log(isLoggedIn);
+let isLoggedIn = localStorage.getItem("username") !==null;
 class Nav extends React.Component {
+   
     render() {
         return (
             <nav className="navbar navbar-expand-lg navbar-light">
@@ -18,7 +18,8 @@ class Nav extends React.Component {
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
                     <Link className="nav-item nav-link" to={'/'}>Home</Link>
-                    {!isLoggedIn ?  <Link className="nav-item nav-link" to={'/login'}>Login</Link> : null}
+
+                   {isLoggedIn ? <Link className="nav-item nav-link" to={'/login'}>Login</Link> : null}
                 
                     <Link className="nav-item nav-link" to={'/signup'}>SignUp</Link>
                     </div>

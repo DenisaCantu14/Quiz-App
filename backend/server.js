@@ -52,7 +52,8 @@ app.post("/register", (req, res) => {
           password: hashedPassword,
         });
         await newUser.save();
-        res.send("User Created");
+        res.status(201).send('User Created');
+       
       }
     });
   });
@@ -64,8 +65,9 @@ passport.authenticate("local", (err, user, info) => {
     else {
     req.logIn(user, (err) => {
          if (err) throw err;
-      res.send("Successfully Authenticated");
-       console.log(req.user);
+      
+      res.status(202).send('Successfully Authenticated');
+     
       });
      }
   })(req, res, next);

@@ -1,0 +1,81 @@
+body{
+    background-color: #f1e8e4;
+}
+.login
+{
+    padding:20px;
+    padding-top:60px;
+    box-shadow: 0px 7px 12px rgba(0,0,0,0.25);
+    position: fixed;
+    top: 55%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 40%;
+    height: 75%;
+    text-align: center;
+    background-image:url(C:\Users\Denisa\Desktop\quiz\Quiz-App\client\src\images\bg.jpg);
+    background-size: cover;
+    border-radius: 25px;
+
+}
+ #msg, #title, .Input
+ {
+  text-align: center;
+  color:#f3dfd7!important;
+  
+  
+ }
+ #title
+ {
+     font-size:3.7em;
+ }
+ input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #f3dfd7 inset;
+    -webkit-text-fill-color: #837bc4;
+    -webkit-text-size-adjust:20px;
+
+
+  }
+ .Input
+ {
+    border-radius: 25px;
+    margin:15px;
+    width:300px;
+    height: 3em;
+    background-color: #f3dfd7!important;
+    border:none;
+
+    
+    
+  
+ }
+
+ #btn
+ {
+     align-items: center;
+     border-radius: 25px;
+    margin:15px;
+    width:300px;
+    height: 2em;
+    background-color: #f3dfd7;
+    border:none;
+    color:#837bc4;
+    transition: all .3s ease-out;
+
+ }
+#btn:hover
+{
+    width:320px;
+    height: 2.5em;
+    font-size: 1.1rem;
+    transform: translate(0, -5px);
+}
+.input-container
+{
+    text-align: center;
+    margin-top:40px;
+
+   
+
+}
