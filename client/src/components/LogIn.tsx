@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import Axios from "axios"
 import Home from './Home'
-import './CSS/LogIn.css';
+import './CSS/Form.css';
 import Swal from "sweetalert2";
 
 function LogIn()
@@ -47,7 +47,7 @@ function LogIn()
        
       {isLoggedIn ? <Home /> : 
      
-      <div className="login">
+      <div className="form-container">
          
           <p id ="msg"> Welcome to</p>
           <h1 id="title">Quiz App</h1>

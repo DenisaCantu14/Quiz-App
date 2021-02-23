@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios"
 import Home from "./Home"
+import './CSS/Form.css';
 import Swal from "sweetalert2";
 
 function SignUp()
@@ -55,19 +56,19 @@ function SignUp()
     };
     return (
       <>
-      {isLoggedIn ? <Home/> : <div className="signup">
-
-          <p> Welcome to</p>
-          <h1>Quiz App</h1>
-          <input type="text" name = "username" placeholder="Username" onChange = {e => setUsername(e.target.value)}></input>
-          <br />
-          <input type="email" name = "email" placeholder="email" onChange = {e => setEmail(e.target.value)}></input>
-          <br />
-          <input type="password" name = "password" placeholder="Password" onChange = {e => setPassword(e.target.value)}></input> <br />
-          <input type="password" placeholder="Confirm Password"></input> <br />
-          <button onClick={signUp} >
+      {isLoggedIn ? <Home/> : <div className="form-container">
+          <p id ="msg"> Welcome to</p>
+          <h1 id="title">Quiz App</h1>
+          <div className="input-container">
+          <input type="text" placeholder="Username"  className ="Input"onChange = {e => setUsername(e.target.value)}></input>
+          <br></br>
+          <input type="password" placeholder="Password"  className ="Input" onChange = {e => setPassword(e.target.value)}></input>
+          <br></br>
+          <input type="password" placeholder="Confirm Password" className ="Input"></input> <br />
+          <button id ="btn" onClick={signUp} >
             Sign Up
           </button>
+          </div>
       </div>
 }
       </>
