@@ -1,6 +1,8 @@
-body{
+body
+{
     background-color: #eed3c7;
 }
+
 .form-container
 {
     padding:20px;
@@ -17,30 +19,31 @@ body{
     background-image:url(C:\Users\Denisa\Desktop\quiz\Quiz-App\client\src\images\bg.jpg);
     background-size: cover;
     border-radius: 25px;
-
 }
+
 .signup 
 {
     height: 85%;
 }
+
  #msg, #title, .Input
  {
   text-align: center;
   color:#f3dfd7!important;
-  
-  
  }
+
  #title
  {
      font-size:3.7em;
  }
- input:-webkit-autofill {
+
+ input:-webkit-autofill 
+ {
     -webkit-box-shadow: 0 0 0px 1000px #f3dfd7 inset;
     -webkit-text-fill-color: #837bc4;
     -webkit-text-size-adjust:20px;
+ }
 
-
-  }
  .Input
  {
     border-radius: 25px;
@@ -50,16 +53,12 @@ body{
     background-color: #f3dfd7!important;
     border:none;
     color:#837bc4!important;
-
-    
-    
-  
  }
 
  #btn
  {
-     align-items: center;
-     border-radius: 25px;
+    align-items: center;
+    border-radius: 25px;
     margin:15px;
     width:300px;
     height: 2em;
@@ -67,8 +66,8 @@ body{
     border:none;
     color:#837bc4;
     transition: all .3s ease-out;
-
  }
+
 #btn:hover
 {
     width:320px;
@@ -76,11 +75,9 @@ body{
     font-size: 1.1rem;
     transform: translate(0, -5px);
 }
+
 .input-container
 {
     text-align: center;
     margin-top:40px;
-
-   
-
 }

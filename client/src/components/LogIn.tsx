@@ -22,8 +22,6 @@ function LogIn()
         
       }).then((res) => { 
         
-        console.log(res.data);
-        console.log(res.status);
         if (res.status === 202) 
         {
           localStorage.setItem("username", username)} 

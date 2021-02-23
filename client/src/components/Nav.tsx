@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import './CSS/Nav.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-let isLoggedIn = localStorage.getItem("username") !==null;
 class Nav extends React.Component {
    
     render() {

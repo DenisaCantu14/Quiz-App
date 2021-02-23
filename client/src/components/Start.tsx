@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './CSS/Start.css';
-import { start } from 'repl';
 import { fetchQuizQuestions } from '../API';
 //components
 import QuestionCard from './QuestionCard';

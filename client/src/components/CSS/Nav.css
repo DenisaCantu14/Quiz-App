@@ -5,26 +5,28 @@
     text-decoration: none!important;
     font-size:2.2rem;
     margin:2px;
-    color:#dad7f5;
-    
+    color:#dad7f5;  
 }
+
 nav
 {
     background-image:url(C:\Users\Denisa\Desktop\quiz\Quiz-App\client\src\images\bg.jpg);
     background-size : cover;
 }
+
 .logo:hover
 {
     color:#bebbd6;
 }
-.nav-item{
+
+.nav-item
+{
     margin-left: 20px;
     font-size:1.5rem;
     color:#dad7f5!important;
-
 }
-h1{
-    font-family: 'Akaya Kanadaka', cursive;
-  
 
+h1
+{
+    font-family: 'Akaya Kanadaka', cursive;
 }

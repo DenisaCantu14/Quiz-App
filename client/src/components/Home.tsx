@@ -10,12 +10,16 @@ function Home() {
         window.location.reload();
         console.log("dd")
     }
-    function connected () {return localStorage.getItem("username")!== null;}
-    console.log(connected())
-    return  connected() ? <> 
-    <button onClick={LogOut}>Log Out</button>
-     <Start />  
-     </> : 
+    function connected () {
+        return localStorage.getItem("username")!== null;
+    }
+   
+    return  connected() ? 
+    <> 
+        <button onClick={LogOut}>Log Out</button>
+        <Start />  
+    </> 
+    : 
     <div>
         <p>Welcome to QuizTime</p>
         <p>You have to login first</p>

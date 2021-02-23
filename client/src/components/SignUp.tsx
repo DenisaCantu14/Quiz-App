@@ -22,8 +22,6 @@ function SignUp()
         url: "http://localhost:4000/register",
       }).then((res) => { 
         logIn()
-       console.log(res.data);
-       console.log(res.status);
       });
     }
     const logIn = () => {
@@ -38,8 +36,6 @@ function SignUp()
         url: "http://localhost:4000/login",
       }).then((res) => { 
         
-        console.log(res.data);
-        console.log(res.status);
         if (res.status === 202) 
         {
           setIsLoggedIn(true);
