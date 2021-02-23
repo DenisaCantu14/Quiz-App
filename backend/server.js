@@ -10,7 +10,7 @@ const bodyParser = require("body-parser");
 const User = require("./user")
 const app = express();
 
-mongoose.connect("mongodb+srv://QuizApp:QuizApp@cluster0.pz850.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+mongoose.connect("mongodb+srv://QuizApp:QuizApp@cluster0.pz850.mongodb.net/Database?retryWrites=true&w=majority",
 {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -19,6 +19,8 @@ mongoose.connect("mongodb+srv://QuizApp:QuizApp@cluster0.pz850.mongodb.net/myFir
     console.log("Mongoose Is Connected");
   }
 );
+
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors({
@@ -40,6 +42,7 @@ require('./passportConfig')(passport);
 
 
 app.post("/register", (req, res) => {
+   
     User.findOne({ username: req.body.username }, async (err, doc) => {
       if (err) throw err;
       if (doc) res.send("User Already Exists");

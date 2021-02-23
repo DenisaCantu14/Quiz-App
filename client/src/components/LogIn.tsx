@@ -9,9 +9,7 @@ function LogIn()
     
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    const [data, setData] = useState(null);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    
+    function connected () {return localStorage.getItem("username")!== null;}
     const logIn = () => {
       Axios({
         method: "POST",
@@ -21,14 +19,13 @@ function LogIn()
         },
         withCredentials: true,
         url: "http://localhost:4000/login",
+        
       }).then((res) => { 
         
         console.log(res.data);
         console.log(res.status);
         if (res.status === 202) 
         {
-          setIsLoggedIn(true);
-          console.log(isLoggedIn);
           localStorage.setItem("username", username)} 
           else 
           {Swal.fire({
@@ -37,15 +34,17 @@ function LogIn()
           text: 'Your data is wrong',
         
         })
+       
       }
       })
-     
+      
     };
-    console.log(isLoggedIn);
+    
+   
     return (
       <>
        
-      {isLoggedIn ? <Home /> : 
+      {connected() ? <Home /> : 
      
       <div className="form-container">
          

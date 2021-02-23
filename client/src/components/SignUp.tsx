@@ -22,6 +22,8 @@ function SignUp()
         url: "http://localhost:4000/register",
       }).then((res) => { 
         logIn()
+       console.log(res.data);
+       console.log(res.status);
       });
     }
     const logIn = () => {
@@ -55,12 +57,15 @@ function SignUp()
      
     };
     return (
-      <>
-      {isLoggedIn ? <Home/> : <div className="form-container">
+      <div>
+      {isLoggedIn ? <Home/> :
+       <div className="form-container signup">
           <p id ="msg"> Welcome to</p>
           <h1 id="title">Quiz App</h1>
           <div className="input-container">
           <input type="text" placeholder="Username"  className ="Input"onChange = {e => setUsername(e.target.value)}></input>
+          <br></br>
+          <input type="text" placeholder="Email"  className ="Input"onChange = {e => setEmail(e.target.value)}></input>
           <br></br>
           <input type="password" placeholder="Password"  className ="Input" onChange = {e => setPassword(e.target.value)}></input>
           <br></br>
@@ -71,7 +76,7 @@ function SignUp()
           </div>
       </div>
 }
-      </>
+      </div>
     );
   
 }

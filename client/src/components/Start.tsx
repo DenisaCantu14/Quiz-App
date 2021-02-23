@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css';
+import './CSS/Start.css';
 import { start } from 'repl';
 import { fetchQuizQuestions } from '../API';
 //components
@@ -101,13 +101,13 @@ function Start()
             <option value="boolean">True or False</option>
             <option value="multiple">Multiple Choise</option>
           </select>
-         
+        
           </>
         ) : null}
       </div>
       <div className="wrapper">
         
-        <h1>REACT QUIZ</h1>
+      
         {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
           <>
           <button className="start" onClick={startTrivia}>Start</button>

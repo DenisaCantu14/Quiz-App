@@ -19,9 +19,6 @@ class Nav extends React.Component {
                     <div className="navbar-nav">
                     <Link className="nav-item nav-link" to={'/'}>Home</Link>
 
-                   {isLoggedIn ? <Link className="nav-item nav-link" to={'/login'}>Login</Link> : null}
-                
-                    <Link className="nav-item nav-link" to={'/signup'}>SignUp</Link>
                     </div>
                 </div>
             </nav >
