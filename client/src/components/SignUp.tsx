@@ -1,37 +1,67 @@
-import React, {useState} from "react";
+import React from "react";
 import axios from "axios"
 import Home from "./Home"
 import './CSS/Form.css';
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
-function SignUp()
+interface UserProps
 {
-    const [username, setUsername] = useState("")
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const signUp = () => {
+  username: string,
+  email: string, 
+  password: string
+}
+class SignUp extends React.Component<UserProps,any>
+{
+  constructor(props: UserProps) {
+    super(props);
+
+    this.state = {
+      username: "",
+      email: "",
+      password: ""
+     };
+    this.logIn = this.logIn.bind(this);
+    this.signUp = this.signUp.bind(this);
+    this.ChangeUserName = this.ChangeUserName.bind(this);
+    this.ChangeEmail = this.ChangeEmail.bind(this);
+    this.ChangePassword = this.ChangePassword.bind(this);
+    this.connected = this.connected.bind(this);
+
+  }
+  connected () {return localStorage.getItem("username")!== null;}
+  signUp () {
       axios({
         method: "POST",
         data: {
-          username,
-          email,
-          password,
+          username:this.state.username,
+          email:this.state.email,
+          password:this.state.password,
         },
         withCredentials: true,
         url: "http://localhost:4000/register",
       }).then((res) => { 
-        logIn()
+        if (res.status === 201) 
+        {
+          this.logIn();
+        } 
+          else 
+          {Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Error! This username already exists :(',
+        
+        })
+      }
       });
     }
-    const logIn = () => {
+    logIn() {
       console.log("am fost apelat")
       axios({
         method: "POST",
         data: {
-          username,
-          password,
+          username:this.state.username,
+          password:this.state.password,
         },
         withCredentials: true,
         url: "http://localhost:4000/login",
@@ -39,36 +69,51 @@ function SignUp()
         
         if (res.status === 202) 
         {
-          setIsLoggedIn(true);
-          console.log(isLoggedIn);
-          localStorage.setItem("username", username)} 
+          localStorage.setItem("username", this.state.username)
+          this.forceUpdate();
+        } 
           else 
           {Swal.fire({
           icon: 'error',
           title: 'Oops...',
-          text: 'Your data is wrong',
+          text: 'Error! Try again',
         
         })
       }
       })
      
     };
+
+    ChangeUserName (u :string) {
+      this.setState({username: u })
+    }
+
+    
+    ChangeEmail (e :string) {
+      this.setState({email: e })
+    }
+
+    ChangePassword (p :string) {
+      this.setState({password: p })
+    }
+
+    render() {
     return (
       <div>
-      {isLoggedIn ? <Home/> :
-       <div className="box">
+      {this.connected() ? <Home/> :
+
        <div className="form-container signup">
           <p id ="msg"> Welcome to</p>
           <h1 className="title-form">Quiz App</h1>
           <div className="input-container">
-          <input type="text" placeholder="Username"  className ="Input"onChange = {e => setUsername(e.target.value)}></input>
+          <input type="text" placeholder="Username"  className ="Input"onChange = {e => this.ChangeUserName(e.target.value)}></input>
           <br></br>
-          <input type="text" placeholder="Email"  className ="Input"onChange = {e => setEmail(e.target.value)}></input>
+          <input type="text" placeholder="Email"  className ="Input"onChange = {e => this.ChangeEmail(e.target.value)}></input>
           <br></br>
-          <input type="password" placeholder="Password"  className ="Input" onChange = {e => setPassword(e.target.value)}></input>
+          <input type="password" placeholder="Password"  className ="Input" onChange = {e => this.ChangePassword(e.target.value)}></input>
           <br></br>
           <input type="password" placeholder="Confirm Password" className ="Input"></input> <br />
-          <button id ="btn" onClick={signUp} >
+          <button id ="btn" onClick={this.signUp} >
             Sign Up
           </button>
           </div>
@@ -76,11 +121,11 @@ function SignUp()
           <p> Already have an account?</p>
           <Link className="" to={'/login'}>Login</Link>
       </div>
-      </div>
+     
 }
       </div>
     );
   
 }
-
+}
 export default SignUp;
