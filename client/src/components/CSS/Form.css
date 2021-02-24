@@ -3,39 +3,38 @@ body
     background-color: #eed3c7;
 }
 
+.box
+{
+    text-align: center;
+}
+
 .form-container
 {
     padding:20px;
     padding-top:60px;
     box-shadow: 0px 7px 12px rgba(0,0,0,0.25);
-    position: fixed;
-    top: 55%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    margin: 30px auto;
     width: 40%;
-    height: 75%;
+    height: auto;
+    position: relative;
     text-align: center;
     background-image:url(C:\Users\Denisa\Desktop\quiz\Quiz-App\client\src\images\bg.jpg);
     background-size: cover;
     border-radius: 25px;
 }
 
-.signup 
-{
-    height: 85%;
-}
 
- #msg, #title, .Input
+ #msg, .title, .Input
  {
   text-align: center;
   color:#f3dfd7!important;
  }
 
- #title
+ .title-form
  {
      font-size:3.7em;
  }
+
 
  input:-webkit-autofill 
  {
@@ -80,4 +79,8 @@ body
 {
     text-align: center;
     margin-top:40px;
+}
+.space
+{
+    height: 100px;
 }
