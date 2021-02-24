@@ -9,7 +9,9 @@ interface UserProps
 {
   username: string,
   email: string, 
-  password: string
+  password: string, 
+  confirmPassword: string,
+  areEqual: string,
 }
 class SignUp extends React.Component<UserProps,any>
 {
@@ -19,7 +21,9 @@ class SignUp extends React.Component<UserProps,any>
     this.state = {
       username: "",
       email: "",
-      password: ""
+      password: "",
+      confirmPassword: "",
+      areEqual : ""
      };
     this.logIn = this.logIn.bind(this);
     this.signUp = this.signUp.bind(this);
@@ -27,10 +31,13 @@ class SignUp extends React.Component<UserProps,any>
     this.ChangeEmail = this.ChangeEmail.bind(this);
     this.ChangePassword = this.ChangePassword.bind(this);
     this.connected = this.connected.bind(this);
+    this.validate = this.validate.bind(this);
 
   }
+  validate () {return  this.state.areEqual==="" && this.state.username!=="" && this.state.password!=="" && this.state.confirmPassword!=="" }
   connected () {return localStorage.getItem("username")!== null;}
   signUp () {
+      !this.validate() ?  console.log(this.state) :
       axios({
         method: "POST",
         data: {
@@ -97,6 +104,10 @@ class SignUp extends React.Component<UserProps,any>
       this.setState({password: p })
     }
 
+    VerifyPassword (p :string) {
+      p !== this.state.password ? this.setState({areEqual : "Passwords don t match"}) : this.setState({areEqual : ""})
+      this.setState({confirmPassword: p })
+    }
     render() {
     return (
       <div>
@@ -112,7 +123,7 @@ class SignUp extends React.Component<UserProps,any>
           <br></br>
           <input type="password" placeholder="Password"  className ="Input" onChange = {e => this.ChangePassword(e.target.value)}></input>
           <br></br>
-          <input type="password" placeholder="Confirm Password" className ="Input"></input> <br />
+          <input type="password" placeholder="Confirm Password" className ="Input" onChange = {e => this.VerifyPassword(e.target.value)}></input><p>{this.state.areEqual}</p> <br />
           <button id ="btn" onClick={this.signUp} >
             Sign Up
           </button>
