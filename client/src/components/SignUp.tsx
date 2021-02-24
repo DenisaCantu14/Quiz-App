@@ -3,6 +3,7 @@ import axios from "axios"
 import Home from "./Home"
 import './CSS/Form.css';
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 function SignUp()
 {
@@ -55,9 +56,10 @@ function SignUp()
     return (
       <div>
       {isLoggedIn ? <Home/> :
+       <div className="box">
        <div className="form-container signup">
           <p id ="msg"> Welcome to</p>
-          <h1 id="title">Quiz App</h1>
+          <h1 className="title-form">Quiz App</h1>
           <div className="input-container">
           <input type="text" placeholder="Username"  className ="Input"onChange = {e => setUsername(e.target.value)}></input>
           <br></br>
@@ -70,6 +72,10 @@ function SignUp()
             Sign Up
           </button>
           </div>
+          <br></br>
+          <p> Already have an account?</p>
+          <Link className="" to={'/login'}>Login</Link>
+      </div>
       </div>
 }
       </div>
