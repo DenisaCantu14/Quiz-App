@@ -1,23 +1,20 @@
 import React from "react";
-import axios from "axios"
 import Home from "./Home"
 import './CSS/Form.css';
-import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import useForm from "./UseForm";
 import validate from './Validations';
 
-interface UserInfo
-{
-  username: string,
-  email: string, 
-  password: string, 
-  password2: string
-}
-const SignUp = () => {
-  const { handleChange, handleSubmit, values, errors } = useForm(validate);
+
+const SignUp = (submitForm : any) => {
+
+  const { handleChange, handleSubmit, values, errors, noErrors } = useForm(validate);  
+  console.log(noErrors)
+  
   return (
-       <div className="form-container signup">
+    <>
+    {!noErrors ? 
+      <div className="form-container signup">
          <form onSubmit={handleSubmit}> 
           <p id = "msg"> Welcome to</p>
           <h1 className = "title-form">Quiz App</h1>
@@ -71,7 +68,11 @@ const SignUp = () => {
           <Link className="" to={'/login'}>Login</Link>
         </form>
       </div>
+      :
+      <Home />
+}
+    </>
     );
-  
+
 }
 export default SignUp;
