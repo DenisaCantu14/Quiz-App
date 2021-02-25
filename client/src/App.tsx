@@ -3,7 +3,7 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Nav from './components/Nav'
 import LogIn from './components/LogIn'
 import Home from './components/Home'
-import SignUp from './components/SignUp'
+import Form1 from './components/Form1'
 
 
 class App extends React.Component {
@@ -17,7 +17,7 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/" component = {Home}/>
               <Route exact path="/login" component = {LogIn} /> 
-              <Route exact path="/signUp" component = {SignUp} /> 
+              <Route exact path="/signUp" component = {Form1} /> 
 
             </Switch>
           </div>
