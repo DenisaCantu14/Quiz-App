@@ -11,7 +11,7 @@ class App extends React.Component {
   return (
     <BrowserRouter>
       <div className="App">
-        <Nav />
+       
         <div className="auth-wrapper">
           <div className="auth-ineer">
             <Switch>

@@ -14,7 +14,7 @@ export type AnswerObject = {
   correctAnswer: string;
 }
 
-const TOTAL_QUESTIONS = 10;
+const TOTAL_QUESTIONS = 2;
 function Start() 
 {
   const [loading, setLoading] = useState(false);
@@ -69,6 +69,7 @@ function Start()
   const nextQuestion = () => {
     //Move on to the next question
     const nextQuestion = number + 1;
+    console.log(nextQuestion)
     if (nextQuestion === TOTAL_QUESTIONS)
     {
       setGameOver(true);
@@ -78,11 +79,11 @@ function Start()
    }
 
    
-
+  console.log(gameOver)
   return ( 
       <>
       <div className="menu" >
-      {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
+      {gameOver || userAnswers.length === TOTAL_QUESTIONS + 1 ? (
           <>
           <select className = "select-btn" name="difficulty" id="difficulty" onChange ={e => setDifficulty(e.target.value)} >
             <option value="" >ANT DIFFICULTY</option>           
@@ -107,7 +108,7 @@ function Start()
       <div className="wrapper">
         
       
-        {gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
+        {gameOver || userAnswers.length === TOTAL_QUESTIONS + 1 ? (
           <>
           <button className="start" onClick={startTrivia}>Start</button>
           </>
@@ -127,6 +128,7 @@ function Start()
           )}
         {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 && (<button className="next" onClick={nextQuestion}>Next question</button>)
         }
+        {!loading && !gameOver && userAnswers.length === TOTAL_QUESTIONS  && <button onClick={nextQuestion}>Finish</button>}
       </div>
       </>
     
