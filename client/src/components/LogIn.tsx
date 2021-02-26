@@ -71,17 +71,17 @@ class LogIn extends React.Component<UserProps, any>
      
       <div className="form-container">
          
-          <p id ="msg"> Welcome to</p>
+          <p className ="msg"> Welcome to</p>
           <h1 className="title-form">Quiz App</h1>
           <div className="input-container">
           <input type="text" placeholder="Username"  className ="Input"onChange = {e => this.ChangeUserName(e.target.value)}></input>
-          <br></br>
+          <br/><br/>
           <input type="password" placeholder="Password"  className ="Input" onChange = {e => this.ChangePassword(e.target.value)}></input>
           <br></br><br></br>
           <button id ="btn"type="submit"  onClick={this.logIn}>LOGIN</button>
           </div>
-          <p> you don t have an account?</p>
-          <Link className="" to={'/signup'}>SignUp</Link>
+          <p className = "msg"> you don t have an account?</p>
+          <Link id="another-btn" to={'/signup'}>SignUp</Link>
       </div>}
       </>
     );

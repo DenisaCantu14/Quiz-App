@@ -16,7 +16,7 @@ const SignUp = (submitForm : any) => {
     {!noErrors ? 
       <div className="form-container signup">
          <form onSubmit={handleSubmit}> 
-          <p id = "msg"> Welcome to</p>
+          <p className = "msg"> Welcome to</p>
           <h1 className = "title-form">Quiz App</h1>
           <div className = "input-container">
               <input 
@@ -27,8 +27,8 @@ const SignUp = (submitForm : any) => {
                 value={values.username}
                 onChange={handleChange}>
               </input>
-              {errors.username && <p>{errors.username}</p>}
-              <br></br>
+             <p className = "error">{errors.username}</p>
+              
               <input 
                 type = "text" 
                 name = "email" 
@@ -37,8 +37,8 @@ const SignUp = (submitForm : any) => {
                 value={values.email}
                 onChange={handleChange}>
               </input>
-              {errors.email && <p>{errors.email}</p>}
-              <br></br>
+              <p className = "error">{errors.email}</p>
+              
               <input 
                 type="password" 
                 name = "password" 
@@ -47,8 +47,8 @@ const SignUp = (submitForm : any) => {
                 value={values.password}
                 onChange={handleChange}>
               </input>
-              {errors.password && <p>{errors.password}</p>}
-              <br></br>
+              <p className = "error" >{errors.password}</p>
+              
               <input 
                 type="password" 
                 name ="password2" 
@@ -57,15 +57,14 @@ const SignUp = (submitForm : any) => {
                 value={values.password2}
                 onChange={handleChange}>
               </input> 
-              {errors.password2 && <p>{errors.password2}</p>}
-              <br />
+              <p className = "error">{errors.password2}</p>
+             
               <button type ="submit" id ="btn" >
                 Sign Up
               </button>
           </div>
-          <br></br>
-          <p> Already have an account?</p>
-          <Link className="" to={'/login'}>Login</Link>
+          <p className="msg"> Already have an account?</p>
+          <Link id="another-btn" to={'/login'}>Login</Link>
         </form>
       </div>
       :

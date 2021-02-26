@@ -1,0 +1,48 @@
+#main-title
+{
+    filter: drop-shadow(4px 4px #1dd0f1);
+    font-size: 60px;
+    color:#2398b8;
+    font-weight: bold;
+}
+.homepage-container
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+ 
+}
+.small-box 
+{
+   margin-top:150px;
+   display:flex;
+   flex-direction: column;
+   justify-content:space-around;
+   margin-left:400px;
+
+}
+.message
+{
+    color: #44b1d8;
+    font-weight: bold;
+    font-size: 20px;
+    
+}
+.buttons
+{
+color:#44b1d8;
+text-decoration: none;
+border:7px solid #44b1d8;
+font-size:20px;
+padding:10px;
+width:100px;
+position: relative;
+text-align: center;
+font-weight:bold;
+}
+.signup {
+    margin-left: 380px;
+}
+.login {
+    margin-left: 100px;
+}

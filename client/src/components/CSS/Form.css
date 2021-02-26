@@ -1,6 +1,9 @@
 body
 {
-    background-color: #eed3c7;
+    background-image: url('https://i.pinimg.com/564x/3f/e7/81/3fe78140910f6a3895569ba12ff7ea21.jpg');
+    background-position: 1040px -30px;
+    background-color: #f1f1f3;
+    background-repeat: no-repeat;
 }
 
 
@@ -8,60 +11,68 @@ body
 .form-container
 {
     padding:20px;
-    padding-top:60px;
+    padding-top:40px;
     box-shadow: 0px 7px 12px rgba(0,0,0,0.25);
     margin: 30px auto;
-    width: 40%;
+    width: 30%;
     height: auto;
     position: relative;
     text-align: center;
-    background-image:url(C:\Users\Denisa\Desktop\quiz\Quiz-App\client\src\images\bg.jpg);
+    background-color:#6cccea;
     background-size: cover;
     border-radius: 25px;
 }
 
 
- #msg, .title, .Input
+ .msg, .title, .Input
  {
   text-align: center;
   color:#f3dfd7!important;
  }
-
+.msg {
+    font-size:20px;
+    font-weight :bold;
+}
  .title-form
  {
      font-size:3.7em;
+     color: #444d97;
  }
 
 
  input:-webkit-autofill 
  {
     box-shadow: 0 0 0px 1000px #f3dfd7 inset;
-    -webkit-text-fill-color: #837bc4;
+    -webkit-text-fill-color: #444d97;
     -webkit-text-size-adjust:20px;
  }
 
  .Input
  {
     border-radius: 25px;
-    margin:15px;
+    margin-top: 10px;
     width:300px;
-    height: 3em;
+    height: 3.2em;
     background-color: #f3dfd7!important;
     border:none;
-    color:#837bc4!important;
+    color:#444d97!important;
+    font-size:15px;
+    font-weight :bold;
  }
 
  #btn
  {
     align-items: center;
     border-radius: 25px;
-    margin:15px;
+    margin:40px;
     width:300px;
-    height: 2em;
+    height: 2.2em;
     background-color: #f3dfd7;
     border:none;
-    color:#837bc4;
+    color:#444d97;
     transition: all .3s ease-out;
+    font-size:15px;
+    font-weight :bold;
  }
 
 #btn:hover
@@ -77,7 +88,17 @@ body
     text-align: center;
     margin-top:40px;
 }
-.space
+
+#another-btn
 {
-    height: 100px;
+text-decoration: none;
+color:#444d97;
+font-size:18px;
+font-weight :bold;
+}
+
+.error
+{
+    color: #444d97;
+    font-weight: bold;
 }
