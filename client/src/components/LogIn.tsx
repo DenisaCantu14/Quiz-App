@@ -67,7 +67,7 @@ class LogIn extends React.Component<UserProps, any>
     return (
       <>
        
-      {this.connected() ? <Home /> : 
+      {this.connected() ? <Home connected={true}/> : 
      
       <div className="form-container">
          

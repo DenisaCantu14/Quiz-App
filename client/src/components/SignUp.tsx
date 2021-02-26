@@ -69,7 +69,7 @@ const SignUp = (submitForm : any) => {
         </form>
       </div>
       :
-      <Home />
+      <Home connected = {noErrors} />
 }
     </>
     );

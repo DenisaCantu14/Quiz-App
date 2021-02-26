@@ -4,17 +4,17 @@ import { Link } from "react-router-dom";
 
 
 
-function Home() {
+function Home(connected : any) {
     function LogOut () {
         localStorage.removeItem("username");
         window.location.reload();
         console.log("dd")
     }
-    function connected () {
+    function isLoggedIn () {
         return localStorage.getItem("username")!== null;
     }
-   
-    return  connected() ? 
+    
+    return  connected.connected === true || isLoggedIn() ? 
     <> 
         <button onClick={LogOut}>Log Out</button>
         <Start />  

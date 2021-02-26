@@ -40,20 +40,24 @@ const useForm = (validate:any) => {
     }).then((res) => { 
       if (res.status === 201) 
       {
+        setNoErrors(true);
         logIn();
+        
       } 
         else 
-        {Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'Error! This username already exists :(',
-      
-      })
-    }
+
+        {
+          setNoErrors(false);
+         
+          setErrors( {
+            ...errors,
+            'username': 'This username already exists'
+          });
+        }
     });
   }
   function logIn() {
-    console.log("am fost apelat")
+    
     axios({
       method: "POST",
       data: {
@@ -89,7 +93,7 @@ const useForm = (validate:any) => {
   useEffect(
     () => {
       if (errors.username === "" && errors.email === "" && errors.password === "" && errors.password2 === "" && isSubmitting) {
-         setNoErrors(true)
+         
          signUp();
          
       }
