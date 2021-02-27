@@ -1,7 +1,5 @@
 import React from "react";
-import Start from './Start'
 import { Link } from "react-router-dom";
-import image from '../images/home3.jpg'
 import './CSS/Home.css';
 
 
@@ -19,7 +17,7 @@ function Home(connected : any) {
     return  connected.connected === true || isLoggedIn() ? 
     <> 
         <button onClick={LogOut}>Log Out</button>
-        <Start />  
+        <Link  to={'/quiz'}>Make your own quiz </Link> 
     </> 
     : 
     <div className = "homepage-container">

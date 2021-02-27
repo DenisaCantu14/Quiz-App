@@ -5,6 +5,7 @@ import { fetchQuizQuestions } from '../API';
 import QuestionCard from './QuestionCard';
 //Types
 import { QuestionState } from '../API';
+import { Link } from 'react-router-dom';
 
 
 export type AnswerObject = {
@@ -15,17 +16,18 @@ export type AnswerObject = {
 }
 
 const TOTAL_QUESTIONS = 2;
-function Start() 
+function Start(info : any) 
 {
+  const difficulty = info.select.difficulty;
+  const category = info.select.category;
+  const type = info.select.type;
   const [loading, setLoading] = useState(false);
   const [questions, setQuestions] = useState<QuestionState[]>([]);
   const [number, setNumber] = useState(0);
   const [userAnswers, setUserAnswers] = useState<AnswerObject[]>([]);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(true);
-  const [difficulty, setDifficulty] = useState("");
-  const [category, setCategory] = useState("");
-  const [type, setType] = useState("");
+ 
  
 
   const startTrivia = async () => 
@@ -78,36 +80,10 @@ function Start()
        setNumber(number+1)
    }
 
-   
-  console.log(gameOver)
   return ( 
       <>
-      <div className="menu" >
-      {gameOver || userAnswers.length === TOTAL_QUESTIONS + 1 ? (
-          <>
-          <select className = "select-btn" name="difficulty" id="difficulty" onChange ={e => setDifficulty(e.target.value)} >
-            <option value="" >ANT DIFFICULTY</option>           
-            <option value="easy" >EASY</option>
-            <option value="medium">MEDIUM</option>
-            <option value="hard">HARD</option>
-          </select>
-          <select className = "select-btn" name="category" id="category" onChange ={e => setCategory(e.target.value)}>
-            <option value="">ANY CATEGORY</option>
-            <option value="9">GENERAL KNOWLEDGE</option>
-            <option value="25">ART</option>
-          </select>
-          <select className = "select-btn" name="type" id="type" onChange ={e => setType(e.target.value)}>
-            <option value="">ANY TYPE</option>
-            <option value="boolean">True or False</option>
-            <option value="multiple">Multiple Choise</option>
-          </select>
-        
-          </>
-        ) : null}
-      </div>
-      <div className="wrapper">
-        
       
+      <div className="wrapper">
         {gameOver || userAnswers.length === TOTAL_QUESTIONS + 1 ? (
           <>
           <button className="start" onClick={startTrivia}>Start</button>
@@ -128,7 +104,7 @@ function Start()
           )}
         {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 && (<button className="next" onClick={nextQuestion}>Next question</button>)
         }
-        {!loading && !gameOver && userAnswers.length === TOTAL_QUESTIONS  && <button onClick={nextQuestion}>Finish</button>}
+        {!loading && !gameOver && userAnswers.length === TOTAL_QUESTIONS  &&  <Link  to={'/'}>Finish</Link>}
       </div>
       </>
     
