@@ -104,7 +104,7 @@ function Start(info : any)
           )}
         {!gameOver && !loading && userAnswers.length === number + 1 && number !== TOTAL_QUESTIONS - 1 && (<button className="next" onClick={nextQuestion}>Next question</button>)
         }
-        {!loading && !gameOver && userAnswers.length === TOTAL_QUESTIONS  &&  <Link  to={'/'}>Finish</Link>}
+        {!loading && !gameOver && userAnswers.length === TOTAL_QUESTIONS  &&  <Link id='finish' to={'/'}>Finish</Link>}
       </div>
       </>
     

@@ -35,7 +35,8 @@ function Quiz ()
               <option value="boolean">True or False</option>
               <option value="multiple">Multiple Choise</option>
             </select>
-            <button className="start" onClick ={s}> Continue</button>
+            <br></br>
+            <button id="continue" onClick ={s}> Continue</button>
         </div>
 }
         {start && <Start select = {info} />}

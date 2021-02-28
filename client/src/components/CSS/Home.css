@@ -46,3 +46,42 @@ font-weight:bold;
 .login {
     margin-left: 100px;
 }
+
+#user {
+    width:50px;
+    margin-left: 10px;
+}
+
+.UserProfile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:20px;
+}
+
+#profile, #quiz{
+    text-decoration: none;
+    color:#0088c4;
+}
+.arrow{
+    width:100px;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+#quiz{
+text-align: center;
+margin-top:40px;
+font-size: 35px;
+}
+.home
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.quiz-container
+{
+    display: flex;
+    justify-content: center;
+
+}

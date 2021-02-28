@@ -16,7 +16,7 @@ p.wrapper
 
 .score
 {
-  color:#7e725f;
+  color:#282b7c;
   font-size : 2rem;
   margin:29px;
 }
@@ -36,13 +36,13 @@ h1
   color:#7b6787;
 }
 
-.start, .next
+.start, .next, #continue, #finish
 {
   cursor: pointer;
-  background: linear-gradient(180deg, #fff, #bfb1d0);
-  border : 2px solid #ac9bb4;
+  background: linear-gradient(180deg, #fff, #0088c4);
+  border : 2px solid #0088c4;
   box-shadow: 0px 5px 10px #f4e7fb;
-  color : #7b6787;
+  color : #282b7c;
   font-size : 25px;
   font-weight : bold;
   border-radius: 10px;
@@ -52,22 +52,38 @@ h1
   width: 300px;
 }
 
-.start
+#continue, .start
 {
   max-width: 200px;
-}
+  top:250px;
+  left:670px;
+  position:absolute;
 
+}
+#finish
+{
+  text-decoration: none;
+  text-align: center;
+}
 .select-btn
 {
   cursor: pointer;
-  background: linear-gradient(180deg, #fff, #bfb1d0);
-  border : 2px solid #ac9bb4;
+  background: linear-gradient(180deg, #fff, #0088c4);
+  border : 2px solid #0088c4;
   box-shadow: 0px 5px 10px #f4e7fb;
-  color : #7b6787;
+  color : #282b7c;
   font-size : 10px;
   font-weight : bold;
   border-radius: 10px;
   height: 40px;
-  margin: 40px 10px;
+  margin: 40px 20px;
   width: auto;
+}
+option{
+  color:#282b7c;
+  font-weight: bold;
+  display: block;
+  font-size:13px;
+  min-height: 1.2em;
+
 }
