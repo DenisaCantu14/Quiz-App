@@ -5,6 +5,7 @@ import Home from './components/Home'
 import SignUp from './components/SignUp'
 import Quiz from './components/Quiz'
 import Start from './components/Start'
+import Profile from './components/Profile'
 
 
 class App extends React.Component {
@@ -21,6 +22,7 @@ class App extends React.Component {
               <Route exact path="/signUp" component = {SignUp} /> 
               <Route exact path="/quiz" component = {Quiz} /> 
               <Route exact path="/start" component = {Start} /> 
+              <Route exact path="/MyProfile" component = {Profile} /> 
 
             </Switch>
           </div>

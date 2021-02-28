@@ -1,0 +1,19 @@
+.profile-container
+{
+    margin: 100px auto;
+    width : 400px;
+    background: #aedcf0;
+    border-radius: 10px;
+    border: 1px solid  #7b6787;
+    padding: 20px;
+    box-shadow: 0px 7px 12px rgba(0,0,0,0.25);
+    text-align: center; 
+    transition: all 0.3s ease;  
+}
+#close
+{
+    float: right;
+    text-decoration: none;
+    font-size:28px;
+
+}
