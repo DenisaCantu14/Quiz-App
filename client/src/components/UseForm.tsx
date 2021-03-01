@@ -34,6 +34,7 @@ const useForm = (validate:any) => {
         username:values.username,
         email:values.email,
         password:values.password,
+        score: 0,
       },
       withCredentials: true,
       url: "http://localhost:4000/register",
