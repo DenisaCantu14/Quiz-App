@@ -70,7 +70,7 @@ const useForm = (validate:any) => {
       
       if (res.status === 202) 
       {
-        localStorage.setItem("username", values.username)
+        window.location.reload();
        
       } 
         else 

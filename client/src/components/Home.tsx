@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import './CSS/Home.css';
+import Axios from 'axios';
 
 
+function Home() {
+   const [login, setLogin] = useState(false);
+   function isLoggedIn () {
+    Axios({
+        method: "GET",
+        withCredentials: true,
+        url: "http://localhost:4000/islogin",})
+        .then((res) => {
 
-function Home(connected : any) {
-   
-    function isLoggedIn () {
-        return localStorage.getItem("username")!== null;
+            setLogin(res.data);
+          }); 
+         
+    return login;       
     }
-    
-    return  connected.connected === true || isLoggedIn() ? 
+     
+    return isLoggedIn() ? 
     <> 
         <div className="UserProfile"> 
             <img src="https://blog.cpanel.com/wp-content/uploads/2019/08/user-01.png" id = "user"alt ='user'></img>

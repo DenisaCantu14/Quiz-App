@@ -82,6 +82,19 @@ app.get("/user", (req, res) => {
     
 })
 
+app.get('/logout', function(req, res){
+  req.logout();
+  res.send("delogat")
+});
+
+app.get('/islogin', function loggedIn(req, res, next) {
+  if (req.user) {
+      res.send(true);
+  } else {
+      res.send(false);
+  }
+})
+
 app.listen(4000, () => {
     console.log('Server Has Started')
 })

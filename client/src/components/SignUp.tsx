@@ -1,7 +1,6 @@
 import React from "react";
-import Home from "./Home"
 import './CSS/Form.css';
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import useForm from "./UseForm";
 import validate from './Validations';
 
@@ -9,7 +8,6 @@ import validate from './Validations';
 const SignUp = (submitForm : any) => {
 
   const { handleChange, handleSubmit, values, errors, noErrors } = useForm(validate);  
-  console.log(noErrors)
   
   return (
     <>
@@ -68,7 +66,7 @@ const SignUp = (submitForm : any) => {
         </form>
       </div>
       :
-      <Home connected = {noErrors} />
+      <Redirect to={'/'}/>
 }
     </>
     );
