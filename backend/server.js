@@ -10,7 +10,7 @@ const bodyParser = require("body-parser");
 const User = require("./user")
 const app = express();
 
-mongoose.connect("mongodb+srv://QuizApp:QuizApp@cluster0.pz850.mongodb.net/Database?retryWrites=true&w=majority",
+mongoose.connect("mongodb+srv://QuizApp:QuizApp@cluster0.pz850.mongodb.net/Db?retryWrites=true&w=majority",
 {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -46,6 +46,7 @@ app.post("/register", (req, res) => {
     User.findOne({ username: req.body.username }, async (err, doc) => {
       if (err) throw err;
       if (doc) res.send("User Already Exists");
+      console.log(doc)
       if (!doc) {
         const hashedPassword = await bcrypt.hash(req.body.password, 10);
         
@@ -71,7 +72,7 @@ passport.authenticate("local", (err, user, info) => {
     else {
     req.logIn(user, (err) => {
          if (err) throw err;
-      
+     
       res.status(202).send('Successfully Authenticated');
      
       });
@@ -90,7 +91,7 @@ app.get('/logout', function(req, res){
   res.send("delogat")
 });
 
-app.get('/islogin', function loggedIn(req, res, next) {
+app.get('/islogin', function (req, res, next) {
   if (req.user) {
       res.send(true);
   } else {
@@ -98,7 +99,31 @@ app.get('/islogin', function loggedIn(req, res, next) {
   }
 })
 
+app.put('/updateScore/:score', (req, res) => {
+
+  
+  const username = req.user;
+  const score = req.params.score;
+  User.findOne(username).then((model) => {
+      return Object.assign(model, {name: newName});
+  }).then((model) => {
+      return model.save();
+  }).then((updatedModel) => {
+      res.send("updated")
+  }).catch((err) => {
+      res.send(err);
+  });
+});
+
 app.listen(4000, () => {
     console.log('Server Has Started')
 })
- 
+// router.put('/updateuser/:id', function(req, res) {
+//   var db = req.db;
+//   var userToUpdate = req.params.id;
+//   db.collection('userlist').update({ _id: ObjectId(userToUpdate)}, req.body, function (err, result) {
+//       res.send(
+//           (err === null) ? {msg: ''} : {msg: err}
+//       );
+//   });
+// });
