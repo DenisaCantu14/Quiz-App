@@ -6,7 +6,7 @@ import SignUp from './components/SignUp'
 import Quiz from './components/Quiz'
 import Start from './components/Start'
 import Profile from './components/Profile'
-
+import Ranking from './components/Ranking'
 
 class App extends React.Component {
   render(){
@@ -23,6 +23,7 @@ class App extends React.Component {
               <Route exact path="/quiz" component = {Quiz} /> 
               <Route exact path="/start" component = {Start} /> 
               <Route exact path="/MyProfile" component = {Profile} /> 
+              <Route exact path="/rank" component = {Ranking} />
 
             </Switch>
           </div>

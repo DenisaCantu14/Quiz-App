@@ -84,6 +84,9 @@ function Start(info : any)
       setFinish(true);
       Axios({
         method: "PUT",
+         data: {
+         score
+      },
         withCredentials: true,
         url: "http://localhost:4000/updateScore",})
         .then((res) => {

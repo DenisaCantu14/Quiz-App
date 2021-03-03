@@ -99,15 +99,17 @@ app.get('/islogin', function (req, res, next) {
   }
 })
 
-app.put('/updateScore/:score', (req, res) => {
+app.put('/updateScore', (req, res) => {
 
   
   const username = req.user;
-  const score = req.params.score;
+  const newScore = req.body.score;
   User.findOne(username).then((model) => {
-      return Object.assign(model, {name: newName});
+      return Object.assign(model, {score: newScore});
   }).then((model) => {
+    console.log(model);
       return model.save();
+
   }).then((updatedModel) => {
       res.send("updated")
   }).catch((err) => {
@@ -115,15 +117,19 @@ app.put('/updateScore/:score', (req, res) => {
   });
 });
 
+app.get('/usersList', function(req, res) {
+  User.find({}, function(err, users) {
+    var userMap = {};
+    let i= 0;
+    users.forEach(function(user) {
+      i++;
+      userMap[i] = {"username":user.username, "score":user.score};
+    });
+
+    res.send(userMap);  
+  });
+});
+
 app.listen(4000, () => {
     console.log('Server Has Started')
 })
-// router.put('/updateuser/:id', function(req, res) {
-//   var db = req.db;
-//   var userToUpdate = req.params.id;
-//   db.collection('userlist').update({ _id: ObjectId(userToUpdate)}, req.body, function (err, result) {
-//       res.send(
-//           (err === null) ? {msg: ''} : {msg: err}
-//       );
-//   });
-// });
