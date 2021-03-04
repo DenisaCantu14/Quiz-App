@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import './CSS/Home.css';
 import Axios from 'axios';
-
+import rightArrow from '../images/arrow.gif'
+import leftArrow from '../images/left.webp'
 
 function Home() {
    const [login, setLogin] = useState(false);
@@ -28,9 +29,9 @@ function Home() {
         <div className="home"> 
             <h1 id = "main-title">Welcome to QuizTime</h1>
             <div className="quiz-container">
-                <img className ="arrow" src="https://media3.giphy.com/media/WoEcsfj0hMyufo8yyz/200w.webp?cid=ecf05e473tr3vphhsy59k1jxr3t1iek6gglqcy8i94vc314h&rid=200w.webp" alt = "arrow"></img>
+                <img className ="arrow" src={leftArrow} alt = "arrow"></img>
                 <Link id = "quiz" to={'/quiz'}>Start a new quiz </Link> 
-                <img className ="arrow" src="client\src\images\arrow.gif" alt = "arrow"></img> 
+                <img className = "arrow" src={rightArrow} alt = "arrow"></img> 
             </div>
         </div>
     </> 

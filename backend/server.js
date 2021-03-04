@@ -85,6 +85,15 @@ app.get("/user", (req, res) => {
     res.send(req.user);
     
 })
+app.get("/score", (req, res) => {
+  
+  User.findOne(req.user).then((model) => {
+   res.send('' + model.score);
+  
+})
+});
+
+
 
 app.get('/logout', function(req, res){
   req.logout();
@@ -104,8 +113,11 @@ app.put('/updateScore', (req, res) => {
   
   const username = req.user;
   const newScore = req.body.score;
+  
+  
   User.findOne(username).then((model) => {
-      return Object.assign(model, {score: newScore});
+       const a = model.score;
+      return Object.assign(model, {score:  a + newScore});
   }).then((model) => {
     console.log(model);
       return model.save();

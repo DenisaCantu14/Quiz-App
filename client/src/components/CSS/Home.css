@@ -1,9 +1,10 @@
 #main-title
 {
     filter: drop-shadow(4px 4px #1dd0f1);
-    font-size: 60px;
+    font-size: 56px;
     color:#2398b8;
     font-weight: bold;
+    margin-right: 20px;
 }
 .homepage-container
 {

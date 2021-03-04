@@ -7,7 +7,7 @@ function Profile ()
 {
     const [data, setData] = useState({username:""})
     const [out, setOut] = useState(false);
-    const [score, setScore] = useState(0);
+    const [score, setScore] = useState('');
 
     function LogOut () {
     
@@ -31,18 +31,31 @@ function Profile ()
         });
       };
 
-     const getScore = () => {
+     
+     function getScore() {
         Axios({
           method: "GET",
           withCredentials: true,
           url: "http://localhost:4000/score",
         }).then((res) => {
+         // console.log(res.data)
           setScore(res.data)
         });
       };
-
-    useEffect (() => {if(data.username === "") getUser()})
-    useEffect (() => {if(score === 0) getScore()})
+    
+      useEffect(
+        () => {
+          if (score === "" ) {
+             
+             getScore();
+             
+          }
+          if (data.username ==='')
+          {
+            getUser();
+          }
+        }
+      );
 
     return (
         out ? <Redirect to={'/'}/> :
@@ -55,6 +68,7 @@ function Profile ()
             <p>{data.username}</p>
             <p>My score :{score} </p>
            <Link to={'/rank'} >Rank</Link>
+           <br />
            <button className="logout" onClick={LogOut} >Logout</button>  
         
         
