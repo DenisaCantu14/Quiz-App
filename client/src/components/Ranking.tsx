@@ -1,29 +1,49 @@
 import React from 'react'
 import Axios from 'axios'
 
-type usersList = { username : string, score:number}
-function rank() {
-  let users : usersList [] = []
-  const getUsers = () => {
-        Axios({
-          method: "GET",
-          withCredentials: true,
-          url: "http://localhost:4000/usersList",
-        }).then((res) => {
-          users = res.data;
-          console.log(users)
-          
-          
-        });
-      };
-getUsers();
-   return (
-       <div> 
-       {users.map(user => {
-           <p>{user.username} : {user.score} : {user} </p>
-       })}
-       </div>
-   )   
+interface usersList { username: [string], score: [number] }
+class rank extends React.Component<usersList, any>{
+  constructor(props: usersList) {
+    super(props);
+    this.state = {
+      users: [],
+
+    }
+    this.getUsers = this.getUsers.bind(this);
+  }
+
+  getUsers = () => {
+    Axios({
+      method: "GET",
+      withCredentials: true,
+      url: "http://localhost:4000/usersList",
+    }).then((res) => {
+      let u: string[] = [];
+
+      (res.data).map((user: string) => u.push(user))
+
+      this.setState({ users: u })
+
+
+    });
+  };
+  componentDidMount() {
+    this.getUsers();
+  }
+  render() {
+    this.getUsers();
+    return (
+      <div className="navigation">
+        <ul>
+          {this.state.users.map((user: any) =>
+            (<li key={user.id}>{user.username} : {user.score}</li>))}
+
+
+
+        </ul>
+      </div>
+    );
+  }
 }
 
 

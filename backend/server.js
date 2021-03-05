@@ -131,11 +131,12 @@ app.put('/updateScore', (req, res) => {
 
 app.get('/usersList', function(req, res) {
   User.find({}, function(err, users) {
-    var userMap = {};
+    var userMap = [];
     let i= 0;
     users.forEach(function(user) {
+     
+      userMap[i] = {"id" : i, "username":user.username, "score":user.score};
       i++;
-      userMap[i] = {"username":user.username, "score":user.score};
     });
 
     res.send(userMap);  
