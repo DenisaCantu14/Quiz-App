@@ -1,5 +1,7 @@
 import React from 'react'
 import Axios from 'axios'
+import './CSS/Ranking.css';
+import { Link } from 'react-router-dom';
 
 interface usersList { username: [string], score: [number] }
 class rank extends React.Component<usersList, any>{
@@ -7,9 +9,11 @@ class rank extends React.Component<usersList, any>{
     super(props);
     this.state = {
       users: [],
+      currentUser : ''
 
     }
     this.getUsers = this.getUsers.bind(this);
+    this.getUser = this.getUser.bind(this);
   }
 
   getUsers = () => {
@@ -27,19 +31,39 @@ class rank extends React.Component<usersList, any>{
 
     });
   };
+
+  getUser = () => {
+    Axios({
+      method: "GET",
+      withCredentials: true,
+      url: "http://localhost:4000/user",
+    }).then((res) => {
+      this.setState({ currentUser: res.data.username })
+      console.log(res.data.username)
+    });
+  };
+  
   componentDidMount() {
     this.getUsers();
+    this.getUser();
   }
   render() {
-    this.getUsers();
+    
     return (
       <div className="navigation">
+         <Link to={'/MyProfile'} id="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </Link>
+            <br /> 
+        <h1 className = "ranking-title">Ranking</h1>
         <ul>
           {this.state.users.map((user: any) =>
-            (<li key={user.id}>{user.username} : {user.score}</li>))}
-
-
-
+            (<li className = "user-score" key={user.id} style={ this.state.currentUser === user.username ? { color: '#2a2973', borderColor: '#2a2973'} : { color: '#0971a4' } }>
+              <p>{user.id + 1}.</p> 
+              <p>{user.username}</p>
+              <p> {user.score}</p>
+              </li>
+))}
         </ul>
       </div>
     );

@@ -63,12 +63,12 @@ function Profile ()
              <Link to={'/'} id="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </Link>
-            <br></br>
-            <img src="https://blog.cpanel.com/wp-content/uploads/2019/08/user-01.png" id = "user"alt ='user'></img>
-            <p>{data.username}</p>
-            <p>My score :{score} </p>
-           <Link to={'/rank'} >Rank</Link>
-           <br />
+            <br /> <br />
+            <img  id = 'user-img' src="https://blog.cpanel.com/wp-content/uploads/2019/08/user-01.png" alt ='user'></img>
+            <p id = "username">{data.username}</p>
+            <p>My score: {score}  </p>
+           <Link id="ranking" to={'/rank'} >See the ranking</Link>
+           <br /> <br/>
            <button className="logout" onClick={LogOut} >Logout</button>  
         
         
