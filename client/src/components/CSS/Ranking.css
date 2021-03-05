@@ -20,7 +20,7 @@
     font-size: 56px;
     color:#2398b8;
     font-weight: bold;
-    margin-right: 20px;
+  
 }
 
 .user-score {
@@ -41,4 +41,13 @@
 ul{
     padding-inline-start: 0;
     
+}
+
+
+ 
+#trofee
+{
+    width:50px;
+    height: 50px;
+    margin:auto auto;
 }

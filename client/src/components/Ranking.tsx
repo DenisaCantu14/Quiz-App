@@ -2,6 +2,10 @@ import React from 'react'
 import Axios from 'axios'
 import './CSS/Ranking.css';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoins } from '@fortawesome/free-solid-svg-icons'
+
+ 
 
 interface usersList { username: [string], score: [number] }
 class rank extends React.Component<usersList, any>{
@@ -54,14 +58,14 @@ class rank extends React.Component<usersList, any>{
          <Link to={'/MyProfile'} id="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </Link>
-            <br /> 
-        <h1 className = "ranking-title">Ranking</h1>
+            <br /> <br />
+        <img id = 'trofee'src='https://icon-library.com/images/badges05-512.png' alt='trofee'></img>
         <ul>
           {this.state.users.map((user: any) =>
             (<li className = "user-score" key={user.id} style={ this.state.currentUser === user.username ? { color: '#2a2973', borderColor: '#2a2973'} : { color: '#0971a4' } }>
               <p>{user.id + 1}.</p> 
               <p>{user.username}</p>
-              <p> {user.score}</p>
+              <p> {user.score} <span><FontAwesomeIcon icon={faCoins} /></span></p>
               </li>
 ))}
         </ul>

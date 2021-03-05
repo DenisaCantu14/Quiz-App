@@ -133,12 +133,23 @@ app.get('/usersList', function(req, res) {
   User.find({}, function(err, users) {
     var userMap = [];
     let i= 0;
+    function compare( a, b ) {
+      if ( a.score < b.score ){
+        return 1;
+      }
+      if ( a.score > b.score ){
+        return -1;
+      }
+      return 0;
+    }
+    
+    users.sort( compare );
     users.forEach(function(user) {
      
       userMap[i] = {"id" : i, "username":user.username, "score":user.score};
       i++;
     });
-
+    
     res.send(userMap);  
   });
 });

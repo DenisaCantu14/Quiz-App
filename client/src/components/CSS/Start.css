@@ -42,7 +42,7 @@ h1
   background-color: #87c8e4;
   border : 2px solid #87c8e4;
   box-shadow: 0px 5px 10px #f4e7fb;
-  color : #282b7c;
+  color : #0971a4;
   font-size : 25px;
   font-weight : bold;
   border-radius: 10px;
@@ -71,7 +71,7 @@ h1
   background-color: #87c8e4;
   border : 2px solid #87c8e4;
   box-shadow: 0px 5px 10px #f4e7fb;
-  color : #282b7c;
+  color : #0971a4;
   font-size : 15px;
   font-weight : bold;
   border-radius: 5px;
@@ -81,7 +81,7 @@ h1
   padding:10px;
 }
 option{
-  color:#282b7c;
+  color:#0971a4;
   font-weight: bold;
   display: block;
   font-size:13px;

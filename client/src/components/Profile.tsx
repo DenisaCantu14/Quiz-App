@@ -66,7 +66,8 @@ function Profile ()
             <br /> <br />
             <img  id = 'user-img' src="https://blog.cpanel.com/wp-content/uploads/2019/08/user-01.png" alt ='user'></img>
             <p id = "username">{data.username}</p>
-            <p>My score: {score}  </p>
+            <hr></hr>
+            <p id = "score">My score: {score}  </p>
            <Link id="ranking" to={'/rank'} >See the ranking</Link>
            <br /> <br/>
            <button className="logout" onClick={LogOut} >Logout</button>  
