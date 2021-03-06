@@ -119,7 +119,6 @@ app.put('/updateScore', (req, res) => {
        const a = model.score;
       return Object.assign(model, {score:  a + newScore});
   }).then((model) => {
-    console.log(model);
       return model.save();
 
   }).then((updatedModel) => {

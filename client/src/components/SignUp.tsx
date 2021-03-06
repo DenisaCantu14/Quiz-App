@@ -66,7 +66,7 @@ const SignUp = (submitForm : any) => {
         </form>
       </div>
       :
-      <Redirect to={'/'}/>
+      <Redirect to={'/Home'}/>
 }
     </>
     );

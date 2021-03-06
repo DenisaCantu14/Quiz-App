@@ -49,7 +49,7 @@ function LogIn ()
   return (
       <>
        
-      {isLoggedIn() ? <Redirect to={'/'}/> : 
+      {isLoggedIn() ? <Redirect to={'/Home'}/> : 
      
       <div className="form-container">
          

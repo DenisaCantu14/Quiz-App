@@ -95,7 +95,7 @@ function Start(info : any)
   }
   return ( 
       <>
-      { finish ? <Redirect to={'/'}/> :
+      { finish ? <Redirect to={'/Home'}/> :
       <div className="wrapper">
         {gameOver || userAnswers.length === TOTAL_QUESTIONS + 1 ? (
           <>

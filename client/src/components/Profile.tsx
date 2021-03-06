@@ -60,7 +60,7 @@ function Profile ()
     return (
         out ? <Redirect to={'/'}/> :
         <div className = 'profile-container'>
-             <Link to={'/'} id="close" aria-label="Close">
+             <Link to={'/Home'} id="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </Link>
             <br /> <br />
