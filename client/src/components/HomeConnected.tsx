@@ -1,24 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import './CSS/Home.css';
 import rightArrow from '../images/arrow.gif'
 import leftArrow from '../images/left.webp'
 
 function HomeConnected() {
-//    const [login, setLogin] = useState(false);
-//    function isLoggedIn () {
-//     Axios({
-//         method: "GET",
-//         withCredentials: true,
-//         url: "http://localhost:4000/islogin",})
-//         .then((res) => {
 
-//             setLogin(res.data);
-//           }); 
-         
-//     return login;       
-//     }
-     
     return (
     <> 
         <div className="UserProfile"> 
