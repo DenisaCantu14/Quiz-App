@@ -24,9 +24,7 @@ const  QuestionCard:React.FC<Props> = ({question,answers,callback, userAnswer, q
             {answers.map(answer => (  
                 <div  
                 key = {answer} 
-                //correct= {userAnswer?.correctAnswer === answer} 
-                //userClicked = {userAnswer?.answer === answer}
-                 >
+                >
                     <button disabled = {!!userAnswer} value = {answer} onClick={callback} className="answer"style = {{backgroundColor: 
                     (userAnswer?.correctAnswer === answer ) ? '#9fbcaa' : 
                     (!(userAnswer?.correctAnswer === answer) && userAnswer?.answer === answer) ? '#ec9b94': 'transparent'}}
