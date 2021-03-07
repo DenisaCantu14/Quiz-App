@@ -27,8 +27,30 @@ function Quiz ()
             </select>
             <select className = "select-btn" name="category" id="category" onChange ={e => setCategory(e.target.value)}>
               <option value="">ANY CATEGORY</option>
-              <option value="9">GENERAL KNOWLEDGE</option>
+              <option value="27">ANIMALS</option>
               <option value="25">ART</option>
+              <option value="16">BOARD GAMES</option>
+              <option value="10">BOOKS</option>
+              <option value="32">CARTOON & ANIMATIONS</option>
+              <option value="26">CELEBRITIES</option>
+              <option value="29">COMICS</option>
+              <option value="18">COMPUTERS</option>
+              <option value="11">FILM</option>
+              <option value="30">GADGES</option>
+              <option value="9" >GENERAL KNOWLEDGE</option>
+              <option value="22">GEOGRAPHY</option>
+              <option value="23">HISTORY</option>
+              <option value="31">JAPANESE ANIME & MANGA</option>
+              <option value="19">MATHEMATICS</option>
+              <option value="12">MUSIC</option>
+              <option value="13">MUSICAL & THEATRES</option>
+              <option value="20">MYTHOLOGY</option>
+              <option value="24">POLITICS</option>
+              <option value="17">SCIENCE & NATURE</option>
+              <option value="21">SPORTS</option>
+              <option value="14">TELEVISION</option>
+              <option value="28">VEHICLES</option>
+              <option value="15">VIDEO GAMES</option>
             </select>
             <select className = "select-btn" name="type" id="type" onChange ={e => setType(e.target.value)}>
               <option value="">ANY TYPE</option>

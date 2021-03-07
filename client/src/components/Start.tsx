@@ -15,7 +15,7 @@ export type AnswerObject = {
   correctAnswer: string;
 }
 
-const TOTAL_QUESTIONS = 2;
+const TOTAL_QUESTIONS = 10;
 function Start(info : any) 
 {
   const difficulty = info.select.difficulty;
