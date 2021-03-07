@@ -18,6 +18,7 @@
     float: right;
     text-decoration: none;
     font-size:28px;
+    color:#0971a4;
 
 }
 #user-img 
@@ -46,12 +47,12 @@ font-weight: bold;
 .logout
 {
   cursor: pointer;
-  background-color: #0971a4;
+  background-color: #87c8e4;
   border : 2px solid #0971a4;
-  color : white;
+  color : #0971a4;
   font-size : 15px;
   font-weight : bold;
-  border-radius: 10px;
+  border-radius: 14px;
   height: 25px;
   margin: 40px 0;
   padding: 0 20px;
